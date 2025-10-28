@@ -9,24 +9,25 @@ public class AutorModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idAutor;
+    @Column(name = "idAutores")
+    private int idAutores;
     @Column(nullable = false)
     private String nombre;
 
     public AutorModel() {
     }
 
-    public AutorModel(int idAutor, String nombre) {
-        this.idAutor = idAutor;
+    public AutorModel(int idAutores, String nombre) {
+        this.idAutores = idAutores;
         this.nombre = nombre;
     }
 
-    public int getIdAutor() {
-        return idAutor;
+    public int getIdAutores() {
+        return idAutores;
     }
 
-    public void setIdAutor(int idAutor) {
-        this.idAutor = idAutor;
+    public void setIdAutores(int idAutores) {
+        this.idAutores = idAutores;
     }
 
     public String getNombre() {

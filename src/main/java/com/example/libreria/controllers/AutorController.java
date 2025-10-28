@@ -37,7 +37,7 @@ public class AutorController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public AutorModel crear(@RequestBody AutorModel autor) {
-        if (autor.getIdAutor() != 0) {
+        if (autor.getIdAutores() != 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El idAutor no debe contener ningún valor");
         }
 
@@ -58,6 +58,7 @@ public class AutorController {
 
 
     //modificar
+    @PutMapping
     public AutorModel actualizar(@PathVariable Integer id, @RequestBody AutorModel autorRequest){
         AutorModel autor = autorRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Autor no encontrado"));

@@ -57,6 +57,7 @@ public class LibroController {
 
 
     //modificar
+    @PutMapping
     public LibroModel actualizar(@PathVariable Integer id, @RequestBody LibroModel libroRequest){
         LibroModel libro = libroRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Libro no encontrado"));

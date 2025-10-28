@@ -57,6 +57,7 @@ public class EditorialController {
 
 
     //modificar
+    @PutMapping
     public EditorialModel actualizar(@PathVariable Integer id, @RequestBody EditorialModel editorialRequest){
         EditorialModel editorial = editorialRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Autor no encontrado"));
